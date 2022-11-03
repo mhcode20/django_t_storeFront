@@ -14,6 +14,7 @@ class Collection(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField()
     description = models.TextField()
     price = models.DecimalField(max_digits=6,decimal_places=2)
     inventory = models.IntegerField()
@@ -38,6 +39,7 @@ class Customer(models.Model):
     phone = models.CharField(max_length=255)
     birth_date = models.DateField(null=True)
     membership = models.CharField(max_length=1, choices=Membership_Choices, default=Membership_Bronze)
+
 
 class Order(models.Model):
     Pending_state = 'P'
